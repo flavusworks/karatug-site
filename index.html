@@ -5,58 +5,416 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kara Tuğ Studio</title>
 <meta name="description" content="Kara Tuğ Studio — mobil uygulama geliştirme stüdyosu. Waqt: Namaz Vakti uygulaması.">
+<link rel="canonical" href="https://karatug.com/">
+<meta name="theme-color" content="#0a0d0b" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f4f6f3" media="(prefers-color-scheme: light)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kara Tuğ Studio">
+<meta property="og:title" content="Kara Tuğ Studio">
+<meta property="og:description" content="Kara Tuğ Studio — mobil uygulama geliştirme stüdyosu. Waqt: Namaz Vakti uygulaması.">
+<meta property="og:url" content="https://karatug.com/">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%230a0d0b%27/%3E%3Crect x=%277%27 y=%277%27 width=%2718%27 height=%2718%27 rx=%275%27 fill=%27%237fc4a2%27/%3E%3C/svg%3E">
+<script>document.documentElement.className='js';</script>
 <style>
-:root{--bg:#f6f4ef;--fg:#1d1c1a;--mut:#6b675f;--card:#fff;--line:#e3dfd5;--acc:#1f4d3a}
-@media (prefers-color-scheme:dark){:root{--bg:#141413;--fg:#efece4;--mut:#a29d92;--card:#1d1d1b;--line:#2c2b28;--acc:#7fc4a2}}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-main{max-width:720px;margin:0 auto;padding:56px 16px 32px}
-h1{font-size:2.2rem;line-height:1.15;margin:0 0 8px;letter-spacing:-.02em}
-.lead{color:var(--mut);margin:0 0 40px;font-size:1.05rem}
-h2{font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--mut);margin:40px 0 12px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
-.card h3{margin:0 0 4px;font-size:1.2rem}
-.card p{margin:0;color:var(--mut)}
-a{color:var(--acc)}
-.row{display:flex;gap:16px;flex-wrap:wrap}
-.row>div{flex:1 1 240px}
-.lang{float:right;font-size:.9rem}
-footer{border-top:1px solid var(--line);margin-top:48px;padding-top:20px;color:var(--mut);font-size:.88rem}
+:root{
+  color-scheme:dark;
+  --bg:#0a0d0b;
+  --bg2:#0f1411;
+  --fg:#eef3ef;
+  --mut:#a7b3ab;
+  --acc:#7fc4a2;
+  --acc-ink:#07130d;
+  --line:rgba(255,255,255,.10);
+  --card:rgba(255,255,255,.045);
+  --card-hi:rgba(255,255,255,.075);
+  --grid:rgba(127,196,162,.075);
+  --glow:rgba(127,196,162,.16);
+  --shadow:0 20px 50px -20px rgba(0,0,0,.7);
+  --phone:#050706;
+  --screen-a:#12281e;
+  --screen-b:#0b1511;
+}
+@media (prefers-color-scheme:light){
+  :root{
+    color-scheme:light;
+    --bg:#f4f6f3;
+    --bg2:#eaefe9;
+    --fg:#101a15;
+    --mut:#46544c;
+    --acc:#1f4d3a;
+    --acc-ink:#ffffff;
+    --line:rgba(16,26,21,.14);
+    --card:rgba(255,255,255,.66);
+    --card-hi:rgba(255,255,255,.9);
+    --grid:rgba(31,77,58,.08);
+    --glow:rgba(31,77,58,.13);
+    --shadow:0 20px 50px -24px rgba(16,40,28,.35);
+    --phone:#0d1511;
+    --screen-a:#173a2b;
+    --screen-b:#0d1e17;
+  }
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:76px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--bg);color:var(--fg);
+  font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  min-height:100vh;position:relative;overflow-x:clip;
+}
+/* grid texture + glow */
+body::before,body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:0}
+body::before{
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:56px 56px;
+  -webkit-mask-image:radial-gradient(ellipse 80% 70% at 50% 0%,#000 25%,transparent 85%);
+  mask-image:radial-gradient(ellipse 80% 70% at 50% 0%,#000 25%,transparent 85%);
+}
+body::after{
+  background:
+    radial-gradient(ellipse 60% 45% at 78% 8%,var(--glow),transparent 70%),
+    radial-gradient(ellipse 50% 40% at 8% 55%,var(--glow),transparent 75%);
+}
+a,button{touch-action:manipulation}
+a{color:var(--acc);text-underline-offset:.2em}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:6px}
+::selection{background:var(--acc);color:var(--acc-ink)}
+.skip{position:absolute;left:16px;top:-60px;background:var(--acc);color:var(--acc-ink);padding:10px 14px;border-radius:8px;z-index:100;font-weight:600;text-decoration:none}
+.skip:focus{top:12px}
+
 [lang-en]{display:none}
 body.en [lang-tr]{display:none}
 body.en [lang-en]{display:revert}
+
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding-inline:16px;position:relative;z-index:1}
+@media (min-width:720px){.wrap{padding-inline:32px}}
+
+/* header */
+header.top{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 72%,transparent);
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:60px}
+.brand{font-weight:700;letter-spacing:-.01em;color:var(--fg);text-decoration:none;display:flex;align-items:center;gap:10px}
+.mark{width:22px;height:22px;border-radius:6px;background:linear-gradient(135deg,var(--acc),transparent 130%);border:1px solid var(--acc);display:inline-block}
+nav.links{display:none;gap:24px}
+nav.links a{color:var(--mut);text-decoration:none;font-size:.95rem;padding:12px 4px;transition:color .2s}
+nav.links a:hover{color:var(--fg)}
+@media (min-width:820px){nav.links{display:flex}}
+.lang{font:inherit;cursor:pointer;display:inline-flex;align-items:center;min-height:44px;color:var(--fg);text-decoration:none;font-size:.9rem;border:1px solid var(--line);
+  background:var(--card);padding:8px 14px;border-radius:999px;white-space:nowrap;transition:border-color .2s,background .2s}
+.lang:hover{border-color:var(--acc);background:var(--card-hi)}
+
+/* sections */
+section{padding-block:72px;scroll-margin-top:68px}
+@media (min-width:900px){section{padding-block:112px}}
+.eyebrow{font-size:.78rem;text-transform:uppercase;letter-spacing:.14em;color:var(--acc);font-weight:700;margin:0 0 14px}
+h1,h2,h3{margin:0;line-height:1.1;letter-spacing:-.025em;text-wrap:balance}
+h1{font-size:clamp(2.5rem,10.5vw,5.75rem);font-weight:800}
+h2{font-size:clamp(1.9rem,6vw,3.25rem);font-weight:750;margin-bottom:16px}
+h3{font-size:1.2rem;letter-spacing:-.01em}
+.lead{color:var(--mut);font-size:clamp(1.05rem,2.6vw,1.3rem);max-width:34em;margin:20px 0 0}
+.sub{color:var(--mut);max-width:40em;margin:0 0 40px}
+
+/* glass card */
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;
+  -webkit-backdrop-filter:blur(16px) saturate(140%);backdrop-filter:blur(16px) saturate(140%);
+  box-shadow:var(--shadow);transition:transform .25s ease,border-color .25s ease,background .25s ease}
+.card:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--acc) 55%,var(--line));background:var(--card-hi)}
+.card p{margin:8px 0 0;color:var(--mut);text-wrap:pretty}
+
+/* hero */
+.hero{padding-top:48px}
+.hero-grid{display:grid;gap:56px;align-items:center}
+@media (min-width:900px){.hero-grid{grid-template-columns:1.15fr .85fr;gap:48px}.hero{padding-top:72px}}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:999px;font-weight:650;text-decoration:none;
+  border:1px solid var(--acc);transition:transform .2s ease,background .2s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn.primary{background:var(--acc);color:var(--acc-ink)}
+.btn.ghost{color:var(--acc);background:transparent}
+.btn.ghost:hover{background:var(--card-hi)}
+
+/* phone mockup */
+.stage{display:flex;flex-direction:column;align-items:center;gap:16px}
+.phone{width:min(268px,78vw);aspect-ratio:9/18.6;background:var(--phone);border-radius:14% / 6.8%;padding:3.4%;
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:0 0 0 2px rgba(0,0,0,.4),0 40px 80px -30px rgba(0,0,0,.8),0 0 80px -20px var(--glow);
+  position:relative;font-size:min(13px,3.4vw)}
+.phone::before{content:"";position:absolute;top:2.6%;left:50%;width:26%;height:2.3%;transform:translateX(-50%);
+  background:#000;border-radius:99px;z-index:3}
+.screen{height:100%;border-radius:11.5% / 5.5%;overflow:hidden;color:#eef3ef;
+  background:linear-gradient(170deg,var(--screen-a),var(--screen-b) 62%);
+  display:flex;flex-direction:column;padding:2.8em 1.2em 1.1em;gap:.9em}
+.sbar{display:flex;justify-content:space-between;font-size:.8em;opacity:.8}
+.nextbox{text-align:center;padding:.9em .5em 1em;border:1px solid rgba(127,196,162,.28);border-radius:1.2em;background:rgba(127,196,162,.08)}
+.nextbox small{display:block;font-size:.82em;letter-spacing:.06em;text-transform:uppercase;color:#a9d8c1}
+.nextbox strong{display:block;font-size:1.25em;margin:.15em 0}
+.count{display:block;font-size:2.35em;font-weight:700;letter-spacing:.02em;font-variant-numeric:tabular-nums;line-height:1.15;color:#7fc4a2}
+.times{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.35em;flex:1;justify-content:space-between}
+.times li{display:flex;justify-content:space-between;align-items:center;padding:.55em .8em;border-radius:.8em;
+  background:rgba(255,255,255,.04);font-size:.98em;font-variant-numeric:tabular-nums;border:1px solid transparent}
+.times li.next{background:rgba(127,196,162,.16);border-color:rgba(127,196,162,.5);font-weight:650}
+.times li time{opacity:.92}
+.stage figcaption{font-size:.82rem;color:var(--mut);text-align:center}
+
+/* waqt */
+.waqt-head{display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px;margin-bottom:12px}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;font-size:.85rem;font-weight:650;
+  color:var(--acc);border:1px solid color-mix(in srgb,var(--acc) 55%,transparent);background:color-mix(in srgb,var(--acc) 10%,transparent)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--acc);display:inline-block;animation:pulse 2.2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.75)}}
+.features{display:grid;gap:16px;grid-template-columns:1fr}
+@media (min-width:640px){.features{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:980px){.features{grid-template-columns:repeat(3,1fr)}}
+.num{display:inline-block;font-size:.8rem;font-weight:700;letter-spacing:.1em;color:var(--acc);margin-bottom:14px;font-variant-numeric:tabular-nums}
+
+/* approach */
+.principles{display:grid;gap:16px;grid-template-columns:1fr}
+@media (min-width:820px){.principles{grid-template-columns:repeat(3,1fr)}}
+.principles .card{padding:28px}
+.principles h3{font-size:1.5rem;margin-bottom:4px}
+
+/* soon */
+.soon{border-style:dashed;text-align:center;padding:clamp(32px,6vw,64px) 24px}
+.soon h2{margin-bottom:12px}
+.soon p{margin:0 auto;max-width:30em}
+
+/* contact */
+.contact{display:grid;gap:16px;grid-template-columns:1fr}
+@media (min-width:720px){.contact{grid-template-columns:1fr 1fr}}
+.contact .big{display:inline-block;margin-top:12px;font-size:clamp(1.05rem,3.6vw,1.35rem);font-weight:650;overflow-wrap:anywhere}
+
+/* footer */
+footer{position:relative;z-index:1;border-top:1px solid var(--line);margin-top:24px;padding-block:32px 48px;color:var(--mut);font-size:.9rem}
+footer p{margin:0 0 6px}
+footer .fb{color:var(--fg);font-weight:650}
+
+/* reveal */
+.js .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.js .reveal.in{opacity:1;transform:none}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .reveal{opacity:1;transform:none}
+  .card:hover,.btn:hover{transform:none}
+}
 </style>
 </head>
 <body>
-<main>
-<a class="lang" href="#" id="t">English / Türkçe</a>
-<h1>Kara Tuğ Studio</h1>
-<p class="lead" lang-tr>Günlük hayata dokunan, sade ve güvenilir mobil uygulamalar geliştiriyoruz.</p>
-<p class="lead" lang-en>We build simple, dependable mobile apps for everyday life.</p>
+<a class="skip" href="#main"><span lang-tr>İçeriğe geç</span><span lang-en>Skip to content</span></a>
 
-<h2 lang-tr>Uygulamalar</h2><h2 lang-en>Apps</h2>
-<div class="card">
-<h3>Waqt — Namaz Vakti</h3>
-<p lang-tr>12 dilde namaz vakitleri, kıble, Kur'an, dua ve zikir; güvenilir bildirimler ve widget'lar. Android için Google Play'de yayına hazırlanıyor.</p>
-<p lang-en>Prayer times, qibla, Qur'an, supplications and dhikr in 12 languages, with dependable notifications and widgets. Coming soon to Google Play for Android.</p>
-</div>
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="#top"><span class="mark" aria-hidden="true"></span><span translate="no">Kara Tuğ Studio</span></a>
+    <nav class="links" aria-label="Menu">
+      <a href="#waqt" translate="no">Waqt</a>
+      <a href="#yaklasim"><span lang-tr>Yaklaşım</span><span lang-en>Approach</span></a>
+      <a href="#yakinda"><span lang-tr>Yakında</span><span lang-en>Soon</span></a>
+      <a href="#iletisim"><span lang-tr>İletişim</span><span lang-en>Contact</span></a>
+    </nav>
+    <button type="button" class="lang" id="t">English / Türkçe</button>
+  </div>
+</header>
 
-<h2 lang-tr>İletişim ve Gizlilik</h2><h2 lang-en>Contact &amp; Privacy</h2>
-<div class="card row">
-<div><strong lang-tr>Destek</strong><strong lang-en>Support</strong><br><a href="mailto:destek@karatug.com">destek@karatug.com</a></div>
-<div><strong lang-tr>Gizlilik Politikası</strong><strong lang-en>Privacy Policy</strong><br><a href="https://flavusworks.github.io/gizlilik.html">Waqt — <span lang-tr>Gizlilik Politikası</span><span lang-en>Privacy Policy</span></a></div>
-</div>
+<main id="main">
 
-<footer>
-© 2026 Kara Tuğ Studio<br>
-Sarı İdari Danışmanlık Hizmetleri Limited Şirketi · Bahçeyaka Mah. Atatürk Cad. No: 402 İç Kapı No: 2, Döşemealtı, Antalya 07190, Türkiye
-</footer>
+  <!-- 1. Hero -->
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div class="reveal">
+        <p class="eyebrow"><span lang-tr>Mobil uygulama stüdyosu</span><span lang-en>Mobile app studio</span></p>
+        <h1 translate="no">Kara Tuğ Studio</h1>
+        <p class="lead" lang-tr>Günlük hayata dokunan, sade ve güvenilir mobil uygulamalar geliştiriyoruz.</p>
+        <p class="lead" lang-en>We build simple, dependable mobile apps for everyday life.</p>
+        <div class="cta">
+          <a class="btn primary" href="#waqt"><span lang-tr>Waqt’ı keşfet</span><span lang-en>Explore Waqt</span></a>
+          <a class="btn ghost" href="#iletisim"><span lang-tr>İletişime geç</span><span lang-en>Get in touch</span></a>
+        </div>
+      </div>
+
+      <figure class="stage reveal" style="margin:0">
+        <div class="phone" role="img" aria-label="Waqt uygulaması ekran örneği / Waqt app screen sample">
+          <div class="screen" aria-hidden="true">
+            <div class="sbar"><span>Waqt</span><span>●●●</span></div>
+            <div class="nextbox">
+              <small><span lang-tr>Sonraki vakit</span><span lang-en>Next prayer</span></small>
+              <strong><span lang-tr id="nxTr">Öğle</span><span lang-en id="nxEn">Dhuhr</span></strong>
+              <span class="count" id="cd">00:00:00</span>
+            </div>
+            <ul class="times" id="times">
+              <li data-h="5" data-m="12"><span><span lang-tr>İmsak</span><span lang-en>Fajr</span></span><time datetime="05:12">05:12</time></li>
+              <li data-h="6" data-m="38"><span><span lang-tr>Güneş</span><span lang-en>Sunrise</span></span><time datetime="06:38">06:38</time></li>
+              <li data-h="12" data-m="51"><span><span lang-tr>Öğle</span><span lang-en>Dhuhr</span></span><time datetime="12:51">12:51</time></li>
+              <li data-h="15" data-m="58"><span><span lang-tr>İkindi</span><span lang-en>Asr</span></span><time datetime="15:58">15:58</time></li>
+              <li data-h="18" data-m="52"><span><span lang-tr>Akşam</span><span lang-en>Maghrib</span></span><time datetime="18:52">18:52</time></li>
+              <li data-h="20" data-m="12"><span><span lang-tr>Yatsı</span><span lang-en>Isha</span></span><time datetime="20:12">20:12</time></li>
+            </ul>
+          </div>
+        </div>
+        <figcaption><span lang-tr>Örnek vakitler, tasarım gösterimi</span><span lang-en>Sample times, design preview</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 2. Waqt -->
+  <section id="waqt">
+    <div class="wrap reveal">
+      <p class="eyebrow"><span lang-tr>Uygulamalar</span><span lang-en>Apps</span></p>
+      <div class="waqt-head">
+        <h2 style="margin:0"><span translate="no">Waqt</span> — <span lang-tr>Namaz Vakti</span><span lang-en>Prayer Times</span></h2>
+        <span class="badge"><span class="dot" aria-hidden="true"></span><span lang-tr>Google Play’de yayına hazırlanıyor</span><span lang-en>Getting ready for release on Google Play</span></span>
+      </div>
+      <p class="sub" lang-tr>Namaz vakitleri, kıble, Kur’an, dua ve zikir; tek bir sade uygulamada.</p>
+      <p class="sub" lang-en>Prayer times, qibla, Qur’an, supplications and dhikr, together in one simple app.</p>
+
+      <div class="features">
+        <article class="card">
+          <span class="num">01</span>
+          <h3><span lang-tr>12 dil</span><span lang-en>12 languages</span></h3>
+          <p lang-tr>Namaz vakitleri ve içerikler 12 dilde sunulur.</p>
+          <p lang-en>Prayer times and content are offered in 12 languages.</p>
+        </article>
+        <article class="card">
+          <span class="num">02</span>
+          <h3><span lang-tr>Kıble</span><span lang-en>Qibla</span></h3>
+          <p lang-tr>Bulunduğunuz yerden Kıble yönünü gösterir.</p>
+          <p lang-en>Shows the direction of the Qibla from where you are.</p>
+        </article>
+        <article class="card">
+          <span class="num">03</span>
+          <h3><span lang-tr>Kur’an</span><span lang-en>Qur’an</span></h3>
+          <p lang-tr>Kur’an’ı okumak için sade bir arayüz.</p>
+          <p lang-en>A clean, simple interface for reading the Qur’an.</p>
+        </article>
+        <article class="card">
+          <span class="num">04</span>
+          <h3><span lang-tr>Dua ve zikir</span><span lang-en>Supplications &amp; dhikr</span></h3>
+          <p lang-tr>Günlük dua ve zikirlere kolay erişim.</p>
+          <p lang-en>Easy access to daily supplications and dhikr.</p>
+        </article>
+        <article class="card">
+          <span class="num">05</span>
+          <h3><span lang-tr>Güvenilir bildirimler</span><span lang-en>Dependable notifications</span></h3>
+          <p lang-tr>Vakitleri kaçırmamanız için güvenilir bildirimler.</p>
+          <p lang-en>Dependable notifications so you don’t miss a prayer time.</p>
+        </article>
+        <article class="card">
+          <span class="num">06</span>
+          <h3><span lang-tr>Widget’lar</span><span lang-en>Widgets</span></h3>
+          <p lang-tr>Sonraki vakti ana ekranınızda bir bakışta görün.</p>
+          <p lang-en>See the next prayer time at a glance on your home screen.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Yaklaşım -->
+  <section id="yaklasim">
+    <div class="wrap reveal">
+      <p class="eyebrow"><span lang-tr>Yaklaşımımız</span><span lang-en>Our approach</span></p>
+      <h2><span lang-tr>Üç basit ilke</span><span lang-en>Three simple principles</span></h2>
+      <div class="principles" style="margin-top:32px">
+        <article class="card">
+          <h3><span lang-tr>Sade</span><span lang-en>Simple</span></h3>
+          <p lang-tr>Gereksiz olan her şeyi çıkarır, ihtiyacınız olanı öne alırız.</p>
+          <p lang-en>We remove what isn’t needed and put what you need up front.</p>
+        </article>
+        <article class="card">
+          <h3><span lang-tr>Güvenilir</span><span lang-en>Dependable</span></h3>
+          <p lang-tr>Her gün güvenle açabileceğiniz, düzgün çalışan uygulamalar hedefleriz.</p>
+          <p lang-en>We aim for apps that work properly and that you can open with confidence every day.</p>
+        </article>
+        <article class="card">
+          <h3><span lang-tr>Günlük hayata dokunan</span><span lang-en>Rooted in daily life</span></h3>
+          <p lang-tr>Gündelik ihtiyaçlardan yola çıkar, hayatınızın akışına uyan çözümler üretiriz.</p>
+          <p lang-en>We start from everyday needs and build solutions that fit the flow of your day.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Yakında -->
+  <section id="yakinda">
+    <div class="wrap reveal">
+      <div class="card soon">
+        <p class="eyebrow"><span lang-tr>Yakında</span><span lang-en>Coming soon</span></p>
+        <h2><span lang-tr>Yeni uygulamalar yolda</span><span lang-en>New apps on the way</span></h2>
+        <p lang-tr>Stüdyomuzda yeni fikirler şekilleniyor. Gelişmeleri burada paylaşacağız.</p>
+        <p lang-en>New ideas are taking shape in our studio. We’ll share updates here.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. İletişim ve Gizlilik -->
+  <section id="iletisim">
+    <div class="wrap reveal">
+      <p class="eyebrow"><span lang-tr>İletişim ve Gizlilik</span><span lang-en>Contact &amp; Privacy</span></p>
+      <h2><span lang-tr>Bize ulaşın</span><span lang-en>Get in touch</span></h2>
+      <div class="contact" style="margin-top:32px">
+        <div class="card">
+          <h3><span lang-tr>Destek</span><span lang-en>Support</span></h3>
+          <p lang-tr>Soru, geri bildirim ve destek talepleriniz için bize yazın.</p>
+          <p lang-en>Write to us with questions, feedback and support requests.</p>
+          <a class="big" href="mailto:destek@karatug.com">destek@karatug.com</a>
+        </div>
+        <div class="card">
+          <h3><span lang-tr>Gizlilik Politikası</span><span lang-en>Privacy Policy</span></h3>
+          <p lang-tr>Waqt için gizlilik politikasını okuyabilirsiniz.</p>
+          <p lang-en>You can read the privacy policy for Waqt.</p>
+          <a class="big" href="https://flavusworks.github.io/gizlilik.html"><span translate="no">Waqt</span> — <span lang-tr>Gizlilik Politikası</span><span lang-en>Privacy Policy</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </main>
+
+<!-- 6. Footer -->
+<footer>
+  <div class="wrap">
+    <p class="fb">© 2026 Kara Tuğ Studio</p>
+    <p>Sarı İdari Danışmanlık Hizmetleri Limited Şirketi · Bahçeyaka Mah. Atatürk Cad. No: 402 İç Kapı No: 2, Döşemealtı, Antalya 07190, Türkiye</p>
+  </div>
+</footer>
+
 <script>
-(function(){var b=document.body,t=document.getElementById('t');
-try{if(localStorage.getItem('l')==='en'||(!localStorage.getItem('l')&&!/^tr/i.test(navigator.language)))b.classList.add('en')}catch(e){}
-t.onclick=function(e){e.preventDefault();b.classList.toggle('en');document.documentElement.lang=b.classList.contains('en')?'en':'tr';try{localStorage.setItem('l',b.classList.contains('en')?'en':'tr')}catch(e){}};
-if(b.classList.contains('en'))document.documentElement.lang='en';})();
+(function(){
+  var b=document.body,t=document.getElementById('t');
+  try{if(localStorage.getItem('l')==='en'||(!localStorage.getItem('l')&&!/^tr/i.test(navigator.language)))b.classList.add('en')}catch(e){}
+  t.onclick=function(e){e.preventDefault();b.classList.toggle('en');document.documentElement.lang=b.classList.contains('en')?'en':'tr';try{localStorage.setItem('l',b.classList.contains('en')?'en':'tr')}catch(e){}};
+  if(b.classList.contains('en'))document.documentElement.lang='en';
+
+  /* reveal on scroll */
+  var items=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}});
+    },{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+    items.forEach(function(el){io.observe(el)});
+  }else{items.forEach(function(el){el.classList.add('in')})}
+
+  /* live countdown (sample times) */
+  var rows=[].slice.call(document.querySelectorAll('#times li'));
+  var names=[['İmsak','Fajr'],['Güneş','Sunrise'],['Öğle','Dhuhr'],['İkindi','Asr'],['Akşam','Maghrib'],['Yatsı','Isha']];
+  var cd=document.getElementById('cd'),nxTr=document.getElementById('nxTr'),nxEn=document.getElementById('nxEn');
+  function p(n){return n<10?'0'+n:''+n}
+  function tick(){
+    var now=new Date(),idx=-1,target=null,i,d;
+    for(i=0;i<rows.length;i++){
+      d=new Date(now.getFullYear(),now.getMonth(),now.getDate(),+rows[i].dataset.h,+rows[i].dataset.m,0);
+      if(d>now){idx=i;target=d;break}
+    }
+    if(idx<0){idx=0;target=new Date(now.getFullYear(),now.getMonth(),now.getDate()+1,+rows[0].dataset.h,+rows[0].dataset.m,0)}
+    var s=Math.max(0,Math.round((target-now)/1000));
+    cd.textContent=p(Math.floor(s/3600))+':'+p(Math.floor(s%3600/60))+':'+p(s%60);
+    nxTr.textContent=names[idx][0];nxEn.textContent=names[idx][1];
+    rows.forEach(function(r,k){r.classList.toggle('next',k===idx)});
+  }
+  tick();setInterval(tick,1000);
+})();
 </script>
 </body>
 </html>
