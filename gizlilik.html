@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Waqt Gizlilik Politikası</title>
+<meta name="description" content="Waqt namaz vakti uygulamasının gizlilik politikası. Kara Tuğ Studio.">
+<link rel="canonical" href="https://karatug.com/gizlilik.html">
+<meta name="theme-color" content="#0a0d0b" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f4f6f3" media="(prefers-color-scheme: light)">
+<meta name="color-scheme" content="dark light">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kara Tuğ Studio">
+<meta property="og:title" content="Waqt Gizlilik Politikası">
+<meta property="og:description" content="Waqt namaz vakti uygulamasının gizlilik politikası. Kara Tuğ Studio.">
+<meta property="og:url" content="https://karatug.com/gizlilik.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%230a0d0b%27/%3E%3Crect x=%277%27 y=%277%27 width=%2718%27 height=%2718%27 rx=%275%27 fill=%27%237fc4a2%27/%3E%3C/svg%3E">
+<style>
+:root{
+  color-scheme:dark;
+  --bg:#0a0d0b;--fg:#eef3ef;--mut:#a7b3ab;--acc:#7fc4a2;--acc-ink:#07130d;
+  --line:rgba(255,255,255,.10);--card:rgba(255,255,255,.045);--card-hi:rgba(255,255,255,.075);
+  --grid:rgba(127,196,162,.075);--glow:rgba(127,196,162,.16);--shadow:0 20px 50px -20px rgba(0,0,0,.7);
+}
+@media (prefers-color-scheme:light){
+  :root{
+    color-scheme:light;
+    --bg:#f4f6f3;--fg:#101a15;--mut:#46544c;--acc:#1f4d3a;--acc-ink:#ffffff;
+    --line:rgba(16,26,21,.14);--card:rgba(255,255,255,.66);--card-hi:rgba(255,255,255,.9);
+    --grid:rgba(31,77,58,.08);--glow:rgba(31,77,58,.13);--shadow:0 20px 50px -24px rgba(16,40,28,.35);
+  }
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:76px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);
+  font:16.5px/1.68 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  min-height:100vh;position:relative;overflow-x:clip}
+body::before,body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:0}
+body::before{
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:56px 56px;
+  -webkit-mask-image:radial-gradient(ellipse 80% 70% at 50% 0%,#000 25%,transparent 85%);
+  mask-image:radial-gradient(ellipse 80% 70% at 50% 0%,#000 25%,transparent 85%);
+}
+body::after{background:radial-gradient(ellipse 60% 45% at 78% 6%,var(--glow),transparent 70%)}
+a{color:var(--acc);text-underline-offset:.2em}
+a:hover{text-decoration-thickness:2px}
+a,button{touch-action:manipulation}
+:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:6px}
+::selection{background:var(--acc);color:var(--acc-ink)}
+.skip{position:absolute;left:16px;top:-60px;background:var(--acc);color:var(--acc-ink);padding:10px 14px;border-radius:8px;z-index:100;font-weight:600;text-decoration:none}
+.skip:focus{top:12px}
+
+.wrap{width:100%;max-width:800px;margin:0 auto;padding-inline:16px;position:relative;z-index:1}
+@media (min-width:720px){.wrap{padding-inline:32px}}
+
+header.top{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 72%,transparent);
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:60px}
+.brand-link{font-weight:700;letter-spacing:-.01em;color:var(--fg);text-decoration:none;display:flex;align-items:center;gap:10px;min-height:44px}
+.mark{width:22px;height:22px;border-radius:6px;background:linear-gradient(135deg,var(--acc),transparent 130%);border:1px solid var(--acc);display:inline-block}
+
+main{padding-block:48px 72px}
+.brand{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);margin:0 0 14px}
+h1{font-size:clamp(2rem,7.5vw,3.25rem);font-weight:800;line-height:1.1;margin:0 0 12px;letter-spacing:-.025em;text-wrap:balance}
+.meta{color:var(--mut);font-size:.92rem;margin:0 0 8px}
+
+.toggle{display:flex;gap:4px;margin:28px 0 0;padding:4px;background:var(--card);border:1px solid var(--line);border-radius:999px;width:fit-content}
+.toggle button{font:inherit;font-size:.9rem;font-weight:600;border:0;cursor:pointer;min-height:44px;padding:0 20px;border-radius:999px;background:transparent;color:var(--mut);transition:background .2s,color .2s}
+.toggle button:hover{color:var(--fg)}
+.toggle button[aria-pressed="true"]{background:var(--acc);color:var(--acc-ink)}
+
+.summary,.contact{background:var(--card);border:1px solid var(--line);border-radius:20px;
+  -webkit-backdrop-filter:blur(16px) saturate(140%);backdrop-filter:blur(16px) saturate(140%);box-shadow:var(--shadow)}
+.summary{margin:34px 0 0;border-left:3px solid var(--acc);padding:22px 24px}
+.summary p{margin:0;font-size:1rem}
+.summary p+p{margin-top:10px}
+.contact{margin-top:44px;padding:22px 24px}
+.contact p{margin:0}
+.contact a{font-weight:600;overflow-wrap:anywhere}
+.addr{color:var(--mut);font-size:.9rem}
+
+h2{font-size:clamp(1.3rem,4vw,1.6rem);font-weight:750;letter-spacing:-.015em;line-height:1.2;margin:46px 0 12px;padding-top:22px;border-top:1px solid var(--line);text-wrap:balance}
+h2:first-of-type{border-top:0;padding-top:0}
+h3{font-size:.95rem;font-weight:700;margin:26px 0 6px;color:var(--acc)}
+p{margin:0 0 14px;text-wrap:pretty}
+ul{margin:0 0 14px;padding-left:20px}
+li{margin-bottom:7px}
+li::marker{color:var(--acc)}
+strong{font-weight:700}
+.no{color:var(--mut)}
+
+table{width:100%;border-collapse:collapse;margin:6px 0 18px;font-size:.94rem}
+th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);font-weight:700}
+.tw{overflow-x:auto}
+.tw table{min-width:520px}
+
+footer{position:relative;z-index:1;border-top:1px solid var(--line);padding-block:32px 48px;color:var(--mut);font-size:.9rem}
+footer p{margin:0 0 6px}
+footer .fb{color:var(--fg);font-weight:650}
+.back{display:inline-flex;align-items:center;min-height:44px}
+
+[hidden]{display:none!important}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main"><span id="skipTxt">İçeriğe geç</span></a>
+
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand-link" href="index.html"><span class="mark" aria-hidden="true"></span><span translate="no">Kara Tuğ Studio</span></a>
+    <a class="back" href="index.html" id="back">&larr; Ana sayfa</a>
+  </div>
+</header>
+
+<main id="main">
+<div class="wrap">
+
+  <p class="brand" translate="no">Kara Tuğ Studio</p>
+  <h1><span translate="no">Waqt</span> · <span id="h1t">Gizlilik Politikası</span></h1>
+  <p class="meta" id="meta">Yürürlük tarihi: 30 Ağustos 2026 · Sürüm 1.0</p>
+
+  <div class="toggle" role="group" aria-label="Dil / Language">
+    <button type="button" id="btnTr" aria-pressed="true">Türkçe</button>
+    <button type="button" id="btnEn" aria-pressed="false">English</button>
+  </div>
+
+  <section id="tr">
+
+    <div class="summary">
+      <p><b>Kısaca:</b> Waqt sizden hesap açmanızı istemez, sizi tanımlamaz ve verilerinizi
+        satmaz. Namaz vakitlerini hesaplamak için konumunuza ihtiyaç duyar; bu konum
+        telefonunuzda kalır.</p>
+      <p>Sunucumuz yoktur. Namaz takibiniz, ayarlarınız ve konumunuz yalnızca cihazınızda
+        saklanır. Uygulamayı sildiğinizde hepsi silinir.</p>
+    </div>
+
+    <h2>1. Kim olduğumuz</h2>
+    <p>Waqt uygulaması <strong translate="no">Kara Tuğ Studio</strong> (Sarı İdari Danışmanlık Hizmetleri Limited Şirketi) tarafından geliştirilmektedir. Bu
+      politika, uygulamanın hangi verilere eriştiğini, bunları neden kullandığını ve
+      kimlerle paylaştığını açıklar.</p>
+
+    <h2>2. Topladığımız veriler</h2>
+
+    <h3>Konum</h3>
+    <p>Namaz vakitleri, bulunduğunuz coğrafi konuma göre hesaplanır. Bu nedenle uygulama
+      konum izni ister. Konum bilginiz:</p>
+    <ul>
+      <li>Namaz vakitlerini ve kıble yönünü hesaplamak için kullanılır,</li>
+      <li>Bulunduğunuz şehrin adını göstermek için kullanılır,</li>
+      <li>Siz "Yakın Camiler" özelliğini açtığınızda çevredeki camileri bulmak için
+        kullanılır.</li>
+    </ul>
+    <p>Konumunuz yalnızca uygulama açıkken alınır. Uygulama <strong>arka planda konumunuzu
+      takip etmez</strong>. Son bilinen konumunuz, internet olmadığında da vakitleri
+      hesaplayabilmek için cihazınızda saklanır.</p>
+    <p>Konum izni vermezseniz uygulama çalışmaya devam eder; bu durumda varsayılan bir
+      şehir kullanılır ve vakitler o şehre göre hesaplanır.</p>
+
+    <h3>Cihazınızda saklanan bilgiler</h3>
+    <p>Aşağıdakiler yalnızca telefonunuzun kendi depolama alanında tutulur; bize veya
+      başka bir yere gönderilmez:</p>
+    <ul>
+      <li>Son bilinen konumunuz ve şehir adınız,</li>
+      <li>Uygulama ayarlarınız (dil, tema, hesaplama yöntemi, bildirim tercihleri, ezan sesi),</li>
+      <li>Namaz takibi kayıtlarınız ve istatistikleriniz,</li>
+      <li>Tesbih sayacınız, favori camileriniz ve son ziyaretleriniz.</li>
+    </ul>
+
+    <h3>Toplamadığımız veriler</h3>
+    <p class="no">Ad, soyad, e-posta, telefon numarası, kimlik bilgisi, rehber, fotoğraf,
+      ödeme bilgisi veya cihaz tanımlayıcısı toplamıyoruz. Hesap açma zorunluluğu yoktur.
+      Kullanım analizi (analytics) veya çökme raporlama aracı kullanmıyoruz.</p>
+
+    <h2>3. Verilerin üçüncü taraflarla paylaşımı</h2>
+    <p>Uygulama, yalnızca aşağıdaki işlevler için harici servislere bağlanır:</p>
+    <div class="tw">
+      <table>
+        <thead>
+          <tr><th>Servis</th><th>Ne gönderilir</th><th>Ne zaman</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>OpenStreetMap (Overpass API)</td>
+            <td>Koordinatlarınız</td>
+            <td>Yalnızca "Yakın Camiler" ekranını açtığınızda</td>
+          </tr>
+          <tr>
+            <td>OpenStreetMap (harita döşemeleri)</td>
+            <td>Görüntülenen harita bölgesi ve cihaz IP adresi</td>
+            <td>Yakın Camiler haritası açıkken</td>
+          </tr>
+          <tr>
+            <td>Cihazın adres çözümleme servisi</td>
+            <td>Koordinatlarınız</td>
+            <td>Şehir adını göstermek için</td>
+          </tr>
+          <tr>
+            <td>Quran.com</td>
+            <td>Kişisel veri gönderilmez</td>
+            <td>Günün ayetini almak için</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Bu servisler kendi gizlilik politikalarına tabidir. Bunların dışında hiçbir veriniz
+      hiç kimseyle paylaşılmaz. <strong>Verilerinizi satmıyoruz ve reklam amacıyla
+      kimseye aktarmıyoruz.</strong></p>
+
+    <h2>4. Reklamlar</h2>
+    <p>Uygulamanın bu sürümünde <strong>reklam bulunmamaktadır</strong>. İleride reklam
+      eklenmesi hâlinde bu politika güncellenecek, reklam kimliği (advertising ID)
+      kullanımı burada açıkça belirtilecek ve Avrupa Birliği kullanıcıları için gerekli
+      onay ekranı gösterilecektir.</p>
+
+    <h2>5. Bildirimler</h2>
+    <p>Namaz vakti bildirimleri tamamen cihazınızda oluşturulur ve zamanlanır. Bildirim
+      göndermek için sunucu kullanmıyoruz; hiçbir bildirim verisi internete çıkmaz.</p>
+
+    <h2>6. Çocukların gizliliği</h2>
+    <p>Uygulama çocuklara yönelik değildir ve bilerek çocuklardan veri toplamaz. Zaten
+      kimlik tespitine yarayan hiçbir veri toplanmamaktadır.</p>
+
+    <h2>7. Veri güvenliği ve saklama süresi</h2>
+    <p>Verileriniz cihazınızın kendi korumalı uygulama alanında saklanır. Bizim
+      erişebileceğimiz bir kopyası yoktur. Verileri dilediğiniz zaman uygulama
+      ayarlarından sıfırlayabilir veya uygulamayı kaldırarak tamamen silebilirsiniz;
+      uygulamayı sildiğinizde tüm veriler cihazınızdan kalıcı olarak silinir.</p>
+
+    <h2>8. Haklarınız</h2>
+    <p>Verileriniz yalnızca sizin cihazınızda bulunduğu için erişim, düzeltme ve silme
+      haklarınızı doğrudan kendiniz kullanabilirsiniz. Bize iletmeniz gereken bir talep
+      oluşmaz. Yine de sorularınız için aşağıdaki adresten bize ulaşabilirsiniz.</p>
+
+    <h2>9. Bu politikadaki değişiklikler</h2>
+    <p>Politika değiştiğinde bu sayfa güncellenir ve yürürlük tarihi yenilenir. Önemli
+      değişiklikler uygulama içinde ayrıca bildirilir.</p>
+
+    <div class="contact">
+      <p><strong>İletişim</strong><br>
+        Sorularınız için: <a href="mailto:destek@karatug.com">destek@karatug.com</a><br>
+        <span class="addr">Sarı İdari Danışmanlık Hizmetleri Limited Şirketi · Bahçeyaka Mah. Atatürk Cad. No: 402 İç Kapı No: 2, Döşemealtı, Antalya 07190, Türkiye</span></p>
+    </div>
+  </section>
+
+  <!-- ============ ENGLISH ============ -->
+  <section id="en" hidden>
+
+    <div class="summary">
+      <p><b>In short:</b> Waqt does not ask you to create an account, does not identify you,
+        and does not sell your data. It needs your location to calculate prayer times, and
+        that location stays on your phone.</p>
+      <p>We run no server. Your prayer tracking, settings and location are stored only on
+        your device. Uninstalling the app deletes all of it.</p>
+    </div>
+
+    <h2>1. Who we are</h2>
+    <p>Waqt is developed by <strong translate="no">Kara Tuğ Studio</strong> (Sarı İdari Danışmanlık Hizmetleri Limited Şirketi). This policy explains what data
+      the app accesses, why it uses it, and who it is shared with.</p>
+
+    <h2>2. Data we collect</h2>
+
+    <h3>Location</h3>
+    <p>Prayer times are calculated from your geographic position, so the app asks for
+      location permission. Your location is used to:</p>
+    <ul>
+      <li>calculate prayer times and the qibla direction,</li>
+      <li>show the name of the city you are in,</li>
+      <li>find nearby mosques, when you open the "Nearby Mosques" screen.</li>
+    </ul>
+    <p>Location is read only while the app is open. The app <strong>does not track your
+      location in the background</strong>. Your last known location is stored on your
+      device so that prayer times can still be calculated without an internet connection.</p>
+    <p>If you decline location permission the app still works; a default city is used and
+      times are calculated for it.</p>
+
+    <h3>Stored on your device</h3>
+    <p>The following is kept only in your phone's own storage and is never sent to us or
+      anywhere else:</p>
+    <ul>
+      <li>your last known location and city name,</li>
+      <li>your app settings (language, theme, calculation method, notification
+        preferences, adhan sound),</li>
+      <li>your prayer tracking records and statistics,</li>
+      <li>your tasbih counter, favourite mosques and recent visits.</li>
+    </ul>
+
+    <h3>Data we do not collect</h3>
+    <p class="no">We do not collect your name, email address, phone number, identity
+      documents, contacts, photos, payment details or device identifiers. No account is
+      required. We use no analytics and no crash reporting.</p>
+
+    <h2>3. Sharing with third parties</h2>
+    <p>The app connects to external services only for the following:</p>
+    <div class="tw">
+      <table>
+        <thead>
+          <tr><th>Service</th><th>What is sent</th><th>When</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>OpenStreetMap (Overpass API)</td>
+            <td>Your coordinates</td>
+            <td>Only when you open the "Nearby Mosques" screen</td>
+          </tr>
+          <tr>
+            <td>OpenStreetMap (map tiles)</td>
+            <td>The map area being viewed and your device IP address</td>
+            <td>While the "Nearby Mosques" map is open</td>
+          </tr>
+          <tr>
+            <td>Device geocoding service</td>
+            <td>Your coordinates</td>
+            <td>To display your city name</td>
+          </tr>
+          <tr>
+            <td>Quran.com</td>
+            <td>No personal data</td>
+            <td>To fetch the verse of the day</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>These services are governed by their own privacy policies. Nothing else about you
+      is shared with anyone. <strong>We do not sell your data and do not pass it to anyone
+      for advertising purposes.</strong></p>
+
+    <h2>4. Advertising</h2>
+    <p>This version of the app contains <strong>no advertising</strong>. If advertising is
+      added in future, this policy will be updated, any use of an advertising ID will be
+      stated here, and the required consent screen will be shown to users in the European
+      Union.</p>
+
+    <h2>5. Notifications</h2>
+    <p>Prayer time notifications are created and scheduled entirely on your device. We use
+      no server to deliver them, and no notification data leaves your phone.</p>
+
+    <h2>6. Children's privacy</h2>
+    <p>The app is not directed at children and does not knowingly collect data from them.
+      No identifying data is collected from anyone.</p>
+
+    <h2>7. Security and retention</h2>
+    <p>Your data is stored in your device's protected app storage. We hold no copy of it.
+      You can reset it at any time from the app's settings, or remove it completely by
+      uninstalling the app, which permanently deletes all of it from your device.</p>
+
+    <h2>8. Your rights</h2>
+    <p>Because your data lives only on your device, you can exercise your rights of
+      access, correction and deletion directly yourself; there is no request you need to
+      send us. You are welcome to contact us with any questions.</p>
+
+    <h2>9. Changes to this policy</h2>
+    <p>If this policy changes, this page will be updated and the effective date revised.
+      Significant changes will also be announced inside the app.</p>
+
+    <div class="contact">
+      <p><strong>Contact</strong><br>
+        Questions: <a href="mailto:destek@karatug.com">destek@karatug.com</a><br>
+        <span class="addr">Sarı İdari Danışmanlık Hizmetleri Limited Şirketi · Bahçeyaka Mah. Atatürk Cad. No: 402 İç Kapı No: 2, Döşemealtı, Antalya 07190, Türkiye</span></p>
+    </div>
+  </section>
+
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="fb">© 2026 Kara Tuğ Studio</p>
+    <p>Sarı İdari Danışmanlık Hizmetleri Limited Şirketi · Bahçeyaka Mah. Atatürk Cad. No: 402 İç Kapı No: 2, Döşemealtı, Antalya 07190, Türkiye</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var tr=document.getElementById('tr'),en=document.getElementById('en'),
+      bt=document.getElementById('btnTr'),be=document.getElementById('btnEn'),
+      meta=document.getElementById('meta'),h1t=document.getElementById('h1t'),
+      back=document.getElementById('back'),skip=document.getElementById('skipTxt');
+  function show(lang,save){
+    var isTr=lang==='tr';
+    tr.hidden=!isTr;en.hidden=isTr;
+    bt.setAttribute('aria-pressed',String(isTr));
+    be.setAttribute('aria-pressed',String(!isTr));
+    meta.textContent=isTr?'Yürürlük tarihi: 30 Ağustos 2026 · Sürüm 1.0':'Effective date: 30 August 2026 · Version 1.0';
+    h1t.textContent=isTr?'Gizlilik Politikası':'Privacy Policy';
+    back.innerHTML=isTr?'&larr; Ana sayfa':'&larr; Home';
+    skip.textContent=isTr?'İçeriğe geç':'Skip to content';
+    document.title=isTr?'Waqt Gizlilik Politikası':'Waqt Privacy Policy';
+    document.documentElement.lang=lang;
+    if(save){try{localStorage.setItem('l',lang)}catch(e){}}
+  }
+  bt.addEventListener('click',function(){show('tr',true)});
+  be.addEventListener('click',function(){show('en',true)});
+  var l=null;try{l=localStorage.getItem('l')}catch(e){}
+  if(l==='en'||(!l&&!/^tr/i.test(navigator.language)))show('en',false);
+})();
+</script>
+</body>
+</html>
