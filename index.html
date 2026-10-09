@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kara Tuğ Studio</title>
+<meta name="description" content="Kara Tuğ Studio — mobil uygulama geliştirme stüdyosu. Waqt: Namaz Vakti uygulaması.">
+<style>
+:root{--bg:#f6f4ef;--fg:#1d1c1a;--mut:#6b675f;--card:#fff;--line:#e3dfd5;--acc:#1f4d3a}
+@media (prefers-color-scheme:dark){:root{--bg:#141413;--fg:#efece4;--mut:#a29d92;--card:#1d1d1b;--line:#2c2b28;--acc:#7fc4a2}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:720px;margin:0 auto;padding:56px 16px 32px}
+h1{font-size:2.2rem;line-height:1.15;margin:0 0 8px;letter-spacing:-.02em}
+.lead{color:var(--mut);margin:0 0 40px;font-size:1.05rem}
+h2{font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--mut);margin:40px 0 12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+.card h3{margin:0 0 4px;font-size:1.2rem}
+.card p{margin:0;color:var(--mut)}
+a{color:var(--acc)}
+.row{display:flex;gap:16px;flex-wrap:wrap}
+.row>div{flex:1 1 240px}
+.lang{float:right;font-size:.9rem}
+footer{border-top:1px solid var(--line);margin-top:48px;padding-top:20px;color:var(--mut);font-size:.88rem}
+[lang-en]{display:none}
+body.en [lang-tr]{display:none}
+body.en [lang-en]{display:revert}
+</style>
+</head>
+<body>
+<main>
+<a class="lang" href="#" id="t">English / Türkçe</a>
+<h1>Kara Tuğ Studio</h1>
+<p class="lead" lang-tr>Günlük hayata dokunan, sade ve güvenilir mobil uygulamalar geliştiriyoruz.</p>
+<p class="lead" lang-en>We build simple, dependable mobile apps for everyday life.</p>
+
+<h2 lang-tr>Uygulamalar</h2><h2 lang-en>Apps</h2>
+<div class="card">
+<h3>Waqt — Namaz Vakti</h3>
+<p lang-tr>12 dilde namaz vakitleri, kıble, Kur'an, dua ve zikir; güvenilir bildirimler ve widget'lar. Android için Google Play'de yayına hazırlanıyor.</p>
+<p lang-en>Prayer times, qibla, Qur'an, supplications and dhikr in 12 languages, with dependable notifications and widgets. Coming soon to Google Play for Android.</p>
+</div>
+
+<h2 lang-tr>İletişim ve Gizlilik</h2><h2 lang-en>Contact &amp; Privacy</h2>
+<div class="card row">
+<div><strong lang-tr>Destek</strong><strong lang-en>Support</strong><br><a href="mailto:destek@karatug.com">destek@karatug.com</a></div>
+<div><strong lang-tr>Gizlilik Politikası</strong><strong lang-en>Privacy Policy</strong><br><a href="https://flavusworks.github.io/gizlilik.html">Waqt — <span lang-tr>Gizlilik Politikası</span><span lang-en>Privacy Policy</span></a></div>
+</div>
+
+<footer>
+© 2026 Kara Tuğ Studio<br>
+Sarı İdari Danışmanlık Hizmetleri Limited Şirketi · Bahçeyaka Mah. Atatürk Cad. No: 402 İç Kapı No: 2, Döşemealtı, Antalya 07190, Türkiye
+</footer>
+</main>
+<script>
+(function(){var b=document.body,t=document.getElementById('t');
+try{if(localStorage.getItem('l')==='en'||(!localStorage.getItem('l')&&!/^tr/i.test(navigator.language)))b.classList.add('en')}catch(e){}
+t.onclick=function(e){e.preventDefault();b.classList.toggle('en');document.documentElement.lang=b.classList.contains('en')?'en':'tr';try{localStorage.setItem('l',b.classList.contains('en')?'en':'tr')}catch(e){}};
+if(b.classList.contains('en'))document.documentElement.lang='en';})();
+</script>
+</body>
+</html>
