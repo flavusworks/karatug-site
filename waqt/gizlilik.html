@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Waqt namaz vakti uygulamasinin gizlilik politikasi. Kara Tug Studio.">
+<title>Waqt Gizlilik Politikası</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Karla:wght@400;500;600;700&display=swap">
+<style>
+  :root{
+    --ground:#F7F5F1;
+    --panel:#FFFFFF;
+    --ink:#12302E;
+    --muted:#5E7573;
+    --rule:#E0DCD3;
+    --accent:#12857F;
+    --warm:#B87A2C;
+    --display:"Fraunces",Georgia,serif;
+    --body:"Karla",-apple-system,Segoe UI,sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --ground:#12191A;
+      --panel:#1B2425;
+      --ink:#E9E3D8;
+      --muted:#9BAAA9;
+      --rule:#2A3536;
+      --accent:#6FC3B8;
+      --warm:#D9AE5F;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#12191A;
+    --panel:#1B2425;
+    --ink:#E9E3D8;
+    --muted:#9BAAA9;
+    --rule:#2A3536;
+    --accent:#6FC3B8;
+    --warm:#D9AE5F;
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:var(--ground);color:var(--ink);
+    font-family:var(--body);font-size:16.5px;line-height:1.68;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:64px 24px 110px}
+
+  .brand{
+    font-family:var(--body);font-size:12px;font-weight:700;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--accent);margin:0 0 12px;
+  }
+  h1{
+    font-family:var(--display);font-weight:600;font-size:clamp(30px,5vw,42px);
+    line-height:1.1;margin:0 0 10px;letter-spacing:-.015em;text-wrap:balance;
+  }
+  .meta{color:var(--muted);font-size:14.5px;margin:0 0 8px}
+
+  .toggle{
+    display:flex;gap:4px;margin:28px 0 0;padding:4px;background:var(--panel);
+    border:1px solid var(--rule);border-radius:999px;width:fit-content;
+  }
+  .toggle button{
+    font:inherit;font-size:14px;font-weight:600;border:0;cursor:pointer;
+    padding:7px 18px;border-radius:999px;background:transparent;color:var(--muted);
+  }
+  .toggle button[aria-pressed="true"]{background:var(--accent);color:#fff}
+  .toggle button:focus-visible{outline:2px solid var(--warm);outline-offset:2px}
+
+  .summary{
+    margin:34px 0 0;background:var(--panel);border:1px solid var(--rule);
+    border-left:3px solid var(--accent);border-radius:12px;padding:22px 24px;
+  }
+  .summary p{margin:0;font-size:16px}
+  .summary p+p{margin-top:10px}
+  .summary b{font-weight:700}
+
+  h2{
+    font-family:var(--display);font-weight:600;font-size:24px;letter-spacing:-.01em;
+    margin:46px 0 12px;padding-top:22px;border-top:1px solid var(--rule);
+  }
+  h2:first-of-type{border-top:0;padding-top:0}
+  h3{font-size:15px;font-weight:700;margin:26px 0 6px;color:var(--accent)}
+  p{margin:0 0 14px}
+  ul{margin:0 0 14px;padding-left:20px}
+  li{margin-bottom:7px}
+  li::marker{color:var(--accent)}
+  strong{font-weight:700}
+
+  table{width:100%;border-collapse:collapse;margin:6px 0 18px;font-size:15px}
+  th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+  th{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700}
+  .tw{overflow-x:auto}
+
+  .no{color:var(--muted)}
+  .contact{
+    margin-top:44px;background:var(--panel);border:1px solid var(--rule);
+    border-radius:12px;padding:22px 24px;
+  }
+  .contact p{margin:0}
+  .contact a{color:var(--accent);font-weight:600}
+
+  [hidden]{display:none!important}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+
+  <p class="brand">Kara Tug Studio</p>
+  <h1>Waqt · Gizlilik Politikası</h1>
+  <p class="meta" id="meta">Yürürlük tarihi: 12 Ekim 2026 · Sürüm 1.2</p>
+
+  <div class="toggle" role="group" aria-label="Dil / Language">
+    <button id="btnTr" aria-pressed="true">Türkçe</button>
+    <button id="btnEn" aria-pressed="false">English</button>
+  </div>
+
+  <!-- ============ TÜRKÇE ============ -->
+  <section id="tr">
+
+    <div class="summary">
+      <p><b>Kısaca:</b> Waqt sizden hesap açmanızı istemez, sizi tanımlamaz ve verilerinizi
+satmaz. Namaz vakitlerini hesaplamak için konumunuza ihtiyaç duyar; vakitler
+telefonunuzda hesaplanır. Konumunuz yalnızca aşağıda (Bölüm 3) sayılan işlevlerde
+ilgili servise gönderilir, başka hiçbir yere gönderilmez.</p>
+      <p>Sunucumuz yoktur. Namaz takibiniz, ayarlarınız ve konumunuz yalnızca cihazınızda
+        saklanır. Uygulamayı sildiğinizde hepsi silinir.</p>
+    </div>
+
+    <h2>1. Kim olduğumuz</h2>
+    <p>Waqt uygulaması <strong>Kara Tug Studio</strong> tarafından geliştirilmektedir. Bu
+      politika, uygulamanın hangi verilere eriştiğini, bunları neden kullandığını ve
+      kimlerle paylaştığını açıklar.</p>
+
+    <h2>2. Topladığımız veriler</h2>
+
+    <h3>Konum</h3>
+    <p>Namaz vakitleri, bulunduğunuz coğrafi konuma göre hesaplanır. Bu nedenle uygulama
+      konum izni ister. Konum bilginiz:</p>
+    <ul>
+      <li>Namaz vakitlerini ve kıble yönünü hesaplamak için kullanılır,</li>
+      <li>Bulunduğunuz şehrin adını bulmak için cihazın adres servisine gönderilir
+(aynı servis, şehir veya ilçe aradığınızda yazdığınız metni de çözümler),</li>
+      <li>Siz "Yakın Camiler" özelliğini açtığınızda çevredeki camileri bulmak için
+        kullanılır.</li>
+    </ul>
+    <p>Konumunuz yalnızca uygulama açıkken alınır. Uygulama <strong>arka planda konumunuzu
+      takip etmez</strong>. Son bilinen konumunuz, internet olmadığında da vakitleri
+      hesaplayabilmek için cihazınızda saklanır.</p>
+    <p>Konum izni vermezseniz uygulama çalışmaya devam eder; bu durumda varsayılan bir
+      şehir kullanılır ve vakitler o şehre göre hesaplanır.</p>
+
+    <h3>Cihazınızda saklanan bilgiler</h3>
+    <p>Aşağıdakiler yalnızca telefonunuzun kendi depolama alanında tutulur; bize veya
+      başka bir yere gönderilmez:</p>
+    <ul>
+      <li>Son bilinen konumunuz ve şehir adınız,</li>
+      <li>Uygulama ayarlarınız (dil, tema, hesaplama yöntemi, bildirim tercihleri, ezan sesi),</li>
+      <li>Namaz takibi kayıtlarınız ve istatistikleriniz,</li>
+      <li>Tesbih sayacınız, favori camileriniz ve son ziyaretleriniz.</li>
+    </ul>
+
+    <h3>Toplamadığımız veriler</h3>
+    <p class="no">Ad, soyad, e-posta, telefon numarası, kimlik bilgisi, rehber, fotoğraf,
+      ödeme bilgisi veya cihaz tanımlayıcısı toplamıyoruz. Hesap açma zorunluluğu yoktur.
+      Kullanım analizi (analytics) veya çökme raporlama aracı kullanmıyoruz.</p>
+
+    <h2>3. Verilerin üçüncü taraflarla paylaşımı</h2>
+    <p>Uygulama, yalnızca aşağıdaki işlevler için harici servislere bağlanır:</p>
+    <div class="tw">
+      <table>
+        <thead>
+          <tr><th>Servis</th><th>Ne gönderilir</th><th>Ne zaman</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+<td>OpenStreetMap (Overpass API)</td>
+<td>Koordinatlarınız (yaklaşık 5 km çevre araması) ve cihaz IP adresi</td>
+<td>"Yakın Camiler" ekranını açtığınızda veya yenilediğinizde</td>
+</tr>
+          <tr>
+<td>OpenStreetMap (harita döşemeleri)</td>
+<td>Görüntülenen harita bölgesi ve cihaz IP adresi</td>
+<td>"Yakın Camiler" ve "Kıble" haritaları açıkken</td>
+</tr>
+          <tr>
+<td>Cihazın adres çözümleme servisi (Android'de cihaza bağlı olarak Google dahil
+bir sağlayıcı olabilir)</td>
+<td>Koordinatlarınız veya şehir/ilçe aramasında yazdığınız metin</td>
+<td>Şehir adını bulmak ve yer aramak için</td>
+</tr>
+          <tr>
+<td>Quran.com</td>
+<td>Sure ve ayet numarası, çeviri kimliği ve cihaz IP adresi; konum veya kimlik gönderilmez</td>
+<td>Günün ayetinin çevirisini almak için</td>
+</tr>
+<tr>
+<td>cdn.islamic.network (Kur'an sesi)</td>
+<td>Dinlediğiniz sure numarası ve cihaz IP adresi; konum gönderilmez</td>
+<td>Kur'an sesli dinleme ekranında bir sure oynattığınızda</td>
+</tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Namaz vakitleri herhangi bir vakit servisine sorulmaz; tamamen cihazınızda
+hesaplanır, bu nedenle vakit hesabı için internet gerekmez. Günün ayeti, Kur'an
+sesi, harita ve yakın cami araması ise internet bağlantısı ister. Ezan sesi özelliği
+bu sürümde bağlı değildir ve bu nedenle ezan sesi için ağ isteği yapılmaz.
+Yukarıdaki servisler cihaz IP adresinizi görebilir ve kendi gizlilik
+politikalarına tabidir. Bunların dışında hiçbir veriniz
+      hiç kimseyle paylaşılmaz. <strong>Verilerinizi satmıyoruz ve reklam amacıyla
+      kimseye aktarmıyoruz.</strong></p>
+
+    <h2>4. Reklamlar</h2>
+    <p>Uygulamanın bu sürümünde <strong>reklam bulunmamaktadır</strong>. İleride reklam
+      eklenmesi hâlinde bu politika güncellenecek, reklam kimliği (advertising ID)
+      kullanımı burada açıkça belirtilecek ve Avrupa Birliği kullanıcıları için gerekli
+      onay ekranı gösterilecektir.</p>
+
+    <h2>5. Bildirimler</h2>
+    <p>Namaz vakti bildirimleri tamamen cihazınızda oluşturulur ve zamanlanır. Bildirim
+      göndermek için sunucu kullanmıyoruz; hiçbir bildirim verisi internete çıkmaz.</p>
+
+    <h2>6. Çocukların gizliliği</h2>
+    <p>Uygulama çocuklara yönelik değildir ve bilerek çocuklardan veri toplamaz. Zaten
+      kimlik tespitine yarayan hiçbir veri toplanmamaktadır.</p>
+
+    <h2>7. Veri güvenliği ve saklama süresi</h2>
+    <p>Verileriniz cihazınızın kendi korumalı uygulama alanında saklanır. Bizim
+      erişebileceğimiz bir kopyası yoktur. Verileri dilediğiniz zaman uygulama
+      ayarlarından sıfırlayabilir veya uygulamayı kaldırarak tamamen silebilirsiniz;
+      uygulamayı sildiğinizde tüm veriler cihazınızdan kalıcı olarak silinir.</p>
+
+    <h2>8. Haklarınız</h2>
+    <p>Verileriniz yalnızca sizin cihazınızda bulunduğu için erişim, düzeltme ve silme
+      haklarınızı doğrudan kendiniz kullanabilirsiniz. Bize iletmeniz gereken bir talep
+      oluşmaz. Yine de sorularınız için aşağıdaki adresten bize ulaşabilirsiniz.</p>
+
+    <h2>9. Bu politikadaki değişiklikler</h2>
+    <p>Politika değiştiğinde bu sayfa güncellenir ve yürürlük tarihi yenilenir. Önemli
+      değişiklikler uygulama içinde ayrıca bildirilir.</p>
+
+    <div class="contact">
+      <p><strong>İletişim</strong><br>
+        Sorularınız için: <a href="mailto:karatugstudio@gmail.com">karatugstudio@gmail.com</a></p>
+    </div>
+  </section>
+
+  <!-- ============ ENGLISH ============ -->
+  <section id="en" hidden>
+
+    <div class="summary">
+      <p><b>In short:</b> Waqt does not ask you to create an account, does not identify you,
+        and does not sell your data. It needs your location to calculate prayer times, which are
+calculated on your phone. Your location is sent to a service only for the
+functions listed in Section 3 below, and nowhere else.</p>
+      <p>We run no server. Your prayer tracking, settings and location are stored only on
+        your device. Uninstalling the app deletes all of it.</p>
+    </div>
+
+    <h2>1. Who we are</h2>
+    <p>Waqt is developed by <strong>Kara Tug Studio</strong>. This policy explains what data
+      the app accesses, why it uses it, and who it is shared with.</p>
+
+    <h2>2. Data we collect</h2>
+
+    <h3>Location</h3>
+    <p>Prayer times are calculated from your geographic position, so the app asks for
+      location permission. Your location is used to:</p>
+    <ul>
+      <li>calculate prayer times and the qibla direction,</li>
+      <li>find the name of the city you are in (sent to your device's address service,
+which also resolves any city or district text you type in a search),</li>
+      <li>find nearby mosques, when you open the "Nearby Mosques" screen.</li>
+    </ul>
+    <p>Location is read only while the app is open. The app <strong>does not track your
+      location in the background</strong>. Your last known location is stored on your
+      device so that prayer times can still be calculated without an internet connection.</p>
+    <p>If you decline location permission the app still works; a default city is used and
+      times are calculated for it.</p>
+
+    <h3>Stored on your device</h3>
+    <p>The following is kept only in your phone's own storage and is never sent to us or
+      anywhere else:</p>
+    <ul>
+      <li>your last known location and city name,</li>
+      <li>your app settings (language, theme, calculation method, notification
+        preferences, adhan sound),</li>
+      <li>your prayer tracking records and statistics,</li>
+      <li>your tasbih counter, favourite mosques and recent visits.</li>
+    </ul>
+
+    <h3>Data we do not collect</h3>
+    <p class="no">We do not collect your name, email address, phone number, identity
+      documents, contacts, photos, payment details or device identifiers. No account is
+      required. We use no analytics and no crash reporting.</p>
+
+    <h2>3. Sharing with third parties</h2>
+    <p>The app connects to external services only for the following:</p>
+    <div class="tw">
+      <table>
+        <thead>
+          <tr><th>Service</th><th>What is sent</th><th>When</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+<td>OpenStreetMap (Overpass API)</td>
+<td>Your coordinates (a search of about 5 km around you) and your device IP address</td>
+<td>When you open or refresh the "Nearby Mosques" screen</td>
+</tr>
+          <tr>
+<td>OpenStreetMap (map tiles)</td>
+<td>The map area being viewed and your device IP address</td>
+<td>While the "Nearby Mosques" and "Qibla" maps are open</td>
+</tr>
+          <tr>
+<td>Device address (geocoding) service (on Android, depending on the device, the
+provider may include Google)</td>
+<td>Your coordinates, or the text you type when searching for a city or district</td>
+<td>To find your city name and to search for places</td>
+</tr>
+          <tr>
+<td>Quran.com</td>
+<td>Surah and verse number, translation ID and your device IP address; no location or identity</td>
+<td>To fetch the translation of the verse of the day</td>
+</tr>
+<tr>
+<td>cdn.islamic.network (Qur'an audio)</td>
+<td>The surah number you play and your device IP address; no location</td>
+<td>When you play a surah in the Qur'an audio screen</td>
+</tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Prayer times are not requested from any prayer-time service; they are calculated
+entirely on your device, so no internet connection is needed for them. The verse of
+the day, Qur'an audio, maps and nearby-mosque search do need a connection. The
+adhan audio feature is not connected in this version, so no network request is made
+for it. The services above can see your device IP address and are governed by
+their own privacy policies. Nothing else about you
+      is shared with anyone. <strong>We do not sell your data and do not pass it to anyone
+      for advertising purposes.</strong></p>
+
+    <h2>4. Advertising</h2>
+    <p>This version of the app contains <strong>no advertising</strong>. If advertising is
+      added in future, this policy will be updated, any use of an advertising ID will be
+      stated here, and the required consent screen will be shown to users in the European
+      Union.</p>
+
+    <h2>5. Notifications</h2>
+    <p>Prayer time notifications are created and scheduled entirely on your device. We use
+      no server to deliver them, and no notification data leaves your phone.</p>
+
+    <h2>6. Children's privacy</h2>
+    <p>The app is not directed at children and does not knowingly collect data from them.
+      No identifying data is collected from anyone.</p>
+
+    <h2>7. Security and retention</h2>
+    <p>Your data is stored in your device's protected app storage. We hold no copy of it.
+      You can reset it at any time from the app's settings, or remove it completely by
+      uninstalling the app, which permanently deletes all of it from your device.</p>
+
+    <h2>8. Your rights</h2>
+    <p>Because your data lives only on your device, you can exercise your rights of
+      access, correction and deletion directly yourself; there is no request you need to
+      send us. You are welcome to contact us with any questions.</p>
+
+    <h2>9. Changes to this policy</h2>
+    <p>If this policy changes, this page will be updated and the effective date revised.
+      Significant changes will also be announced inside the app.</p>
+
+    <div class="contact">
+      <p><strong>Contact</strong><br>
+        Questions: <a href="mailto:karatugstudio@gmail.com">karatugstudio@gmail.com</a></p>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  (function(){
+    var tr=document.getElementById('tr'),en=document.getElementById('en'),
+        bt=document.getElementById('btnTr'),be=document.getElementById('btnEn'),
+        meta=document.getElementById('meta');
+    function show(lang){
+      var isTr=lang==='tr';
+      tr.hidden=!isTr; en.hidden=isTr;
+      bt.setAttribute('aria-pressed',String(isTr));
+      be.setAttribute('aria-pressed',String(!isTr));
+      meta.textContent=isTr
+        ? 'Yürürlük tarihi: 12 Ekim 2026 · Sürüm 1.2'
+        : 'Effective date: 12 October 2026 · Version 1.2';
+      document.documentElement.lang=lang;
+    }
+    bt.addEventListener('click',function(){show('tr')});
+    be.addEventListener('click',function(){show('en')});
+  })();
+</script>
+
+  <p style="max-width:720px;margin:34px auto 60px;padding:0 22px;font-size:14.5px">
+    <a href="../index.html">&larr; Kara Tug Studio</a>
+  </p>
+</body>
+</html>
