@@ -120,7 +120,7 @@ footer .fb{color:var(--fg);font-weight:650}
 
   <p class="brand" translate="no">Kara Tuğ Studio</p>
   <h1><span translate="no">Waqt</span> · <span id="h1t">Gizlilik Politikası</span></h1>
-  <p class="meta" id="meta">Yürürlük tarihi: 12 Ekim 2026 · Sürüm 1.2</p>
+  <p class="meta" id="meta">Yürürlük tarihi: 12 Ekim 2026 · Sürüm 1.3</p>
 
   <div class="toggle" role="group" aria-label="Dil / Language">
     <button type="button" id="btnTr" aria-pressed="true">Türkçe</button>
@@ -238,8 +238,8 @@ politikalarına tabidir. Bunların dışında hiçbir veriniz
 
     <h2>7. Veri güvenliği ve saklama süresi</h2>
     <p>Verileriniz cihazınızın kendi korumalı uygulama alanında saklanır. Bizim
-      erişebileceğimiz bir kopyası yoktur. Verileri dilediğiniz zaman uygulama
-      ayarlarından sıfırlayabilir veya uygulamayı kaldırarak tamamen silebilirsiniz;
+      erişebileceğimiz bir kopyası yoktur. Verilerinizi dilediğiniz zaman uygulamayı
+      kaldırarak veya Android ayarlarından uygulama verilerini silerek tamamen silebilirsiniz;
       uygulamayı sildiğinizde tüm veriler cihazınızdan kalıcı olarak silinir.</p>
 
     <h2>8. Haklarınız</h2>
@@ -369,8 +369,8 @@ their own privacy policies. Nothing else about you
 
     <h2>7. Security and retention</h2>
     <p>Your data is stored in your device's protected app storage. We hold no copy of it.
-      You can reset it at any time from the app's settings, or remove it completely by
-      uninstalling the app, which permanently deletes all of it from your device.</p>
+      You can delete it at any time by uninstalling the app or by clearing the app's data in
+      Android settings; either way all of it is permanently removed from your device.</p>
 
     <h2>8. Your rights</h2>
     <p>Because your data lives only on your device, you can exercise your rights of
@@ -409,7 +409,7 @@ their own privacy policies. Nothing else about you
     tr.hidden=!isTr;en.hidden=isTr;
     bt.setAttribute('aria-pressed',String(isTr));
     be.setAttribute('aria-pressed',String(!isTr));
-    meta.textContent=isTr?'Yürürlük tarihi: 12 Ekim 2026 · Sürüm 1.2':'Effective date: 12 October 2026 · Version 1.2';
+    meta.textContent=isTr?'Yürürlük tarihi: 12 Ekim 2026 · Sürüm 1.3':'Effective date: 12 October 2026 · Version 1.3';
     h1t.textContent=isTr?'Gizlilik Politikası':'Privacy Policy';
     back.innerHTML=isTr?'&larr; Ana sayfa':'&larr; Home';
     skip.textContent=isTr?'İçeriğe geç':'Skip to content';
