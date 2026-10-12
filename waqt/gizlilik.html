@@ -3,122 +3,130 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Waqt namaz vakti uygulamasinin gizlilik politikasi. Kara Tug Studio.">
 <title>Waqt Gizlilik Politikası</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Karla:wght@400;500;600;700&display=swap">
+<meta name="description" content="Waqt namaz vakti uygulamasının gizlilik politikası. Kara Tuğ Studio.">
+<link rel="canonical" href="https://karatug.com/waqt/gizlilik.html">
+<meta name="theme-color" content="#0a0d0b" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f4f6f3" media="(prefers-color-scheme: light)">
+<meta name="color-scheme" content="dark light">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kara Tuğ Studio">
+<meta property="og:title" content="Waqt Gizlilik Politikası">
+<meta property="og:description" content="Waqt namaz vakti uygulamasının gizlilik politikası. Kara Tuğ Studio.">
+<meta property="og:url" content="https://karatug.com/waqt/gizlilik.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%230a0d0b%27/%3E%3Crect x=%277%27 y=%277%27 width=%2718%27 height=%2718%27 rx=%275%27 fill=%27%237fc4a2%27/%3E%3C/svg%3E">
 <style>
+:root{
+  color-scheme:dark;
+  --bg:#0a0d0b;--fg:#eef3ef;--mut:#a7b3ab;--acc:#7fc4a2;--acc-ink:#07130d;
+  --line:rgba(255,255,255,.10);--card:rgba(255,255,255,.045);--card-hi:rgba(255,255,255,.075);
+  --grid:rgba(127,196,162,.075);--glow:rgba(127,196,162,.16);--shadow:0 20px 50px -20px rgba(0,0,0,.7);
+}
+@media (prefers-color-scheme:light){
   :root{
-    --ground:#F7F5F1;
-    --panel:#FFFFFF;
-    --ink:#12302E;
-    --muted:#5E7573;
-    --rule:#E0DCD3;
-    --accent:#12857F;
-    --warm:#B87A2C;
-    --display:"Fraunces",Georgia,serif;
-    --body:"Karla",-apple-system,Segoe UI,sans-serif;
+    color-scheme:light;
+    --bg:#f4f6f3;--fg:#101a15;--mut:#46544c;--acc:#1f4d3a;--acc-ink:#ffffff;
+    --line:rgba(16,26,21,.14);--card:rgba(255,255,255,.66);--card-hi:rgba(255,255,255,.9);
+    --grid:rgba(31,77,58,.08);--glow:rgba(31,77,58,.13);--shadow:0 20px 50px -24px rgba(16,40,28,.35);
   }
-  @media (prefers-color-scheme:dark){
-    :root:not([data-theme="light"]){
-      --ground:#12191A;
-      --panel:#1B2425;
-      --ink:#E9E3D8;
-      --muted:#9BAAA9;
-      --rule:#2A3536;
-      --accent:#6FC3B8;
-      --warm:#D9AE5F;
-    }
-  }
-  :root[data-theme="dark"]{
-    --ground:#12191A;
-    --panel:#1B2425;
-    --ink:#E9E3D8;
-    --muted:#9BAAA9;
-    --rule:#2A3536;
-    --accent:#6FC3B8;
-    --warm:#D9AE5F;
-  }
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:76px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);
+  font:16.5px/1.68 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  min-height:100vh;position:relative;overflow-x:clip}
+body::before,body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:0}
+body::before{
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:56px 56px;
+  -webkit-mask-image:radial-gradient(ellipse 80% 70% at 50% 0%,#000 25%,transparent 85%);
+  mask-image:radial-gradient(ellipse 80% 70% at 50% 0%,#000 25%,transparent 85%);
+}
+body::after{background:radial-gradient(ellipse 60% 45% at 78% 6%,var(--glow),transparent 70%)}
+a{color:var(--acc);text-underline-offset:.2em}
+a:hover{text-decoration-thickness:2px}
+a,button{touch-action:manipulation}
+:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:6px}
+::selection{background:var(--acc);color:var(--acc-ink)}
+.skip{position:absolute;left:16px;top:-60px;background:var(--acc);color:var(--acc-ink);padding:10px 14px;border-radius:8px;z-index:100;font-weight:600;text-decoration:none}
+.skip:focus{top:12px}
 
-  *{box-sizing:border-box}
-  body{
-    margin:0;background:var(--ground);color:var(--ink);
-    font-family:var(--body);font-size:16.5px;line-height:1.68;
-    -webkit-font-smoothing:antialiased;
-  }
-  .wrap{max-width:760px;margin:0 auto;padding:64px 24px 110px}
+.wrap{width:100%;max-width:800px;margin:0 auto;padding-inline:16px;position:relative;z-index:1}
+@media (min-width:720px){.wrap{padding-inline:32px}}
 
-  .brand{
-    font-family:var(--body);font-size:12px;font-weight:700;letter-spacing:.16em;
-    text-transform:uppercase;color:var(--accent);margin:0 0 12px;
-  }
-  h1{
-    font-family:var(--display);font-weight:600;font-size:clamp(30px,5vw,42px);
-    line-height:1.1;margin:0 0 10px;letter-spacing:-.015em;text-wrap:balance;
-  }
-  .meta{color:var(--muted);font-size:14.5px;margin:0 0 8px}
+header.top{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 72%,transparent);
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:60px}
+.brand-link{font-weight:700;letter-spacing:-.01em;color:var(--fg);text-decoration:none;display:flex;align-items:center;gap:10px;min-height:44px}
+.mark{width:22px;height:22px;border-radius:6px;background:linear-gradient(135deg,var(--acc),transparent 130%);border:1px solid var(--acc);display:inline-block}
 
-  .toggle{
-    display:flex;gap:4px;margin:28px 0 0;padding:4px;background:var(--panel);
-    border:1px solid var(--rule);border-radius:999px;width:fit-content;
-  }
-  .toggle button{
-    font:inherit;font-size:14px;font-weight:600;border:0;cursor:pointer;
-    padding:7px 18px;border-radius:999px;background:transparent;color:var(--muted);
-  }
-  .toggle button[aria-pressed="true"]{background:var(--accent);color:#fff}
-  .toggle button:focus-visible{outline:2px solid var(--warm);outline-offset:2px}
+main{padding-block:48px 72px}
+.brand{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);margin:0 0 14px}
+h1{font-size:clamp(2rem,7.5vw,3.25rem);font-weight:800;line-height:1.1;margin:0 0 12px;letter-spacing:-.025em;text-wrap:balance}
+.meta{color:var(--mut);font-size:.92rem;margin:0 0 8px}
 
-  .summary{
-    margin:34px 0 0;background:var(--panel);border:1px solid var(--rule);
-    border-left:3px solid var(--accent);border-radius:12px;padding:22px 24px;
-  }
-  .summary p{margin:0;font-size:16px}
-  .summary p+p{margin-top:10px}
-  .summary b{font-weight:700}
+.toggle{display:flex;gap:4px;margin:28px 0 0;padding:4px;background:var(--card);border:1px solid var(--line);border-radius:999px;width:fit-content}
+.toggle button{font:inherit;font-size:.9rem;font-weight:600;border:0;cursor:pointer;min-height:44px;padding:0 20px;border-radius:999px;background:transparent;color:var(--mut);transition:background .2s,color .2s}
+.toggle button:hover{color:var(--fg)}
+.toggle button[aria-pressed="true"]{background:var(--acc);color:var(--acc-ink)}
 
-  h2{
-    font-family:var(--display);font-weight:600;font-size:24px;letter-spacing:-.01em;
-    margin:46px 0 12px;padding-top:22px;border-top:1px solid var(--rule);
-  }
-  h2:first-of-type{border-top:0;padding-top:0}
-  h3{font-size:15px;font-weight:700;margin:26px 0 6px;color:var(--accent)}
-  p{margin:0 0 14px}
-  ul{margin:0 0 14px;padding-left:20px}
-  li{margin-bottom:7px}
-  li::marker{color:var(--accent)}
-  strong{font-weight:700}
+.summary,.contact{background:var(--card);border:1px solid var(--line);border-radius:20px;
+  -webkit-backdrop-filter:blur(16px) saturate(140%);backdrop-filter:blur(16px) saturate(140%);box-shadow:var(--shadow)}
+.summary{margin:34px 0 0;border-left:3px solid var(--acc);padding:22px 24px}
+.summary p{margin:0;font-size:1rem}
+.summary p+p{margin-top:10px}
+.contact{margin-top:44px;padding:22px 24px}
+.contact p{margin:0}
+.contact a{font-weight:600;overflow-wrap:anywhere}
+.addr{color:var(--mut);font-size:.9rem}
 
-  table{width:100%;border-collapse:collapse;margin:6px 0 18px;font-size:15px}
-  th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
-  th{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700}
-  .tw{overflow-x:auto}
+h2{font-size:clamp(1.3rem,4vw,1.6rem);font-weight:750;letter-spacing:-.015em;line-height:1.2;margin:46px 0 12px;padding-top:22px;border-top:1px solid var(--line);text-wrap:balance}
+h2:first-of-type{border-top:0;padding-top:0}
+h3{font-size:.95rem;font-weight:700;margin:26px 0 6px;color:var(--acc)}
+p{margin:0 0 14px;text-wrap:pretty}
+ul{margin:0 0 14px;padding-left:20px}
+li{margin-bottom:7px}
+li::marker{color:var(--acc)}
+strong{font-weight:700}
+.no{color:var(--mut)}
 
-  .no{color:var(--muted)}
-  .contact{
-    margin-top:44px;background:var(--panel);border:1px solid var(--rule);
-    border-radius:12px;padding:22px 24px;
-  }
-  .contact p{margin:0}
-  .contact a{color:var(--accent);font-weight:600}
+table{width:100%;border-collapse:collapse;margin:6px 0 18px;font-size:.94rem}
+th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);font-weight:700}
+.tw{overflow-x:auto}
+.tw table{min-width:520px}
 
-  [hidden]{display:none!important}
+footer{position:relative;z-index:1;border-top:1px solid var(--line);padding-block:32px 48px;color:var(--mut);font-size:.9rem}
+footer p{margin:0 0 6px}
+footer .fb{color:var(--fg);font-weight:650}
+.back{display:inline-flex;align-items:center;min-height:44px}
+
+[hidden]{display:none!important}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
+<a class="skip" href="#main"><span id="skipTxt">İçeriğe geç</span></a>
 
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand-link" href="../index.html"><span class="mark" aria-hidden="true"></span><span translate="no">Kara Tuğ Studio</span></a>
+    <a class="back" href="../index.html" id="back">&larr; Ana sayfa</a>
+  </div>
+</header>
 
+<main id="main">
 <div class="wrap">
 
-  <p class="brand">Kara Tug Studio</p>
-  <h1>Waqt · Gizlilik Politikası</h1>
+  <p class="brand" translate="no">Kara Tuğ Studio</p>
+  <h1><span translate="no">Waqt</span> · <span id="h1t">Gizlilik Politikası</span></h1>
   <p class="meta" id="meta">Yürürlük tarihi: 12 Ekim 2026 · Sürüm 1.2</p>
 
   <div class="toggle" role="group" aria-label="Dil / Language">
-    <button id="btnTr" aria-pressed="true">Türkçe</button>
-    <button id="btnEn" aria-pressed="false">English</button>
+    <button type="button" id="btnTr" aria-pressed="true">Türkçe</button>
+    <button type="button" id="btnEn" aria-pressed="false">English</button>
   </div>
 
-  <!-- ============ TÜRKÇE ============ -->
   <section id="tr">
 
     <div class="summary">
@@ -131,7 +139,7 @@ ilgili servise gönderilir, başka hiçbir yere gönderilmez.</p>
     </div>
 
     <h2>1. Kim olduğumuz</h2>
-    <p>Waqt uygulaması <strong>Kara Tug Studio</strong> tarafından geliştirilmektedir. Bu
+    <p>Waqt uygulaması <strong translate="no">Kara Tuğ Studio</strong> (Sarı İdari Danışmanlık Hizmetleri Limited Şirketi) tarafından geliştirilmektedir. Bu
       politika, uygulamanın hangi verilere eriştiğini, bunları neden kullandığını ve
       kimlerle paylaştığını açıklar.</p>
 
@@ -245,7 +253,8 @@ politikalarına tabidir. Bunların dışında hiçbir veriniz
 
     <div class="contact">
       <p><strong>İletişim</strong><br>
-        Sorularınız için: <a href="mailto:karatugstudio@gmail.com">karatugstudio@gmail.com</a></p>
+        Sorularınız için: <a href="mailto:destek@karatug.com">destek@karatug.com</a><br>
+        <span class="addr">Sarı İdari Danışmanlık Hizmetleri Ltd. Şti. · Bahçeyaka Mah. Atatürk Cad. No: 402 İç Kapı No: 2, Döşemealtı, Antalya 07190, Türkiye</span></p>
     </div>
   </section>
 
@@ -262,7 +271,7 @@ functions listed in Section 3 below, and nowhere else.</p>
     </div>
 
     <h2>1. Who we are</h2>
-    <p>Waqt is developed by <strong>Kara Tug Studio</strong>. This policy explains what data
+    <p>Waqt is developed by <strong translate="no">Kara Tuğ Studio</strong> (Sarı İdari Danışmanlık Hizmetleri Limited Şirketi). This policy explains what data
       the app accesses, why it uses it, and who it is shared with.</p>
 
     <h2>2. Data we collect</h2>
@@ -374,34 +383,45 @@ their own privacy policies. Nothing else about you
 
     <div class="contact">
       <p><strong>Contact</strong><br>
-        Questions: <a href="mailto:karatugstudio@gmail.com">karatugstudio@gmail.com</a></p>
+        Questions: <a href="mailto:destek@karatug.com">destek@karatug.com</a><br>
+        <span class="addr">Sarı İdari Danışmanlık Hizmetleri Ltd. Şti. · Bahçeyaka Mah. Atatürk Cad. No: 402 İç Kapı No: 2, Döşemealtı, Antalya 07190, Türkiye</span></p>
     </div>
   </section>
 
 </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="fb">© 2026 Kara Tuğ Studio</p>
+    <p>Sarı İdari Danışmanlık Hizmetleri Limited Şirketi · Bahçeyaka Mah. Atatürk Cad. No: 402 İç Kapı No: 2, Döşemealtı, Antalya 07190, Türkiye</p>
+  </div>
+</footer>
 
 <script>
-  (function(){
-    var tr=document.getElementById('tr'),en=document.getElementById('en'),
-        bt=document.getElementById('btnTr'),be=document.getElementById('btnEn'),
-        meta=document.getElementById('meta');
-    function show(lang){
-      var isTr=lang==='tr';
-      tr.hidden=!isTr; en.hidden=isTr;
-      bt.setAttribute('aria-pressed',String(isTr));
-      be.setAttribute('aria-pressed',String(!isTr));
-      meta.textContent=isTr
-        ? 'Yürürlük tarihi: 12 Ekim 2026 · Sürüm 1.2'
-        : 'Effective date: 12 October 2026 · Version 1.2';
-      document.documentElement.lang=lang;
-    }
-    bt.addEventListener('click',function(){show('tr')});
-    be.addEventListener('click',function(){show('en')});
-  })();
+(function(){
+  var tr=document.getElementById('tr'),en=document.getElementById('en'),
+      bt=document.getElementById('btnTr'),be=document.getElementById('btnEn'),
+      meta=document.getElementById('meta'),h1t=document.getElementById('h1t'),
+      back=document.getElementById('back'),skip=document.getElementById('skipTxt');
+  function show(lang,save){
+    var isTr=lang==='tr';
+    tr.hidden=!isTr;en.hidden=isTr;
+    bt.setAttribute('aria-pressed',String(isTr));
+    be.setAttribute('aria-pressed',String(!isTr));
+    meta.textContent=isTr?'Yürürlük tarihi: 12 Ekim 2026 · Sürüm 1.2':'Effective date: 12 October 2026 · Version 1.2';
+    h1t.textContent=isTr?'Gizlilik Politikası':'Privacy Policy';
+    back.innerHTML=isTr?'&larr; Ana sayfa':'&larr; Home';
+    skip.textContent=isTr?'İçeriğe geç':'Skip to content';
+    document.title=isTr?'Waqt Gizlilik Politikası':'Waqt Privacy Policy';
+    document.documentElement.lang=lang;
+    if(save){try{localStorage.setItem('l',lang)}catch(e){}}
+  }
+  bt.addEventListener('click',function(){show('tr',true)});
+  be.addEventListener('click',function(){show('en',true)});
+  var l=null;try{l=localStorage.getItem('l')}catch(e){}
+  if(l==='en'||(!l&&!/^tr/i.test(navigator.language)))show('en',false);
+})();
 </script>
-
-  <p style="max-width:720px;margin:34px auto 60px;padding:0 22px;font-size:14.5px">
-    <a href="../index.html">&larr; Kara Tug Studio</a>
-  </p>
 </body>
 </html>
